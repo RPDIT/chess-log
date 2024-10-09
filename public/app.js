@@ -1,4 +1,3 @@
-const game_board = document.querySelector("#chess-board")
+var board = document.getElementById("chessboard");
 
-console.log(game_board)
-console.log('connected')
+console.log(board);

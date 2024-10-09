@@ -18,8 +18,11 @@ import boardRoutes from './routes/board.js';
 dotenv.config();
 const app = express(); 
 
-var MIDDLEWEAR_TO_MOUNT = [express.json(), helmet(), cors(), morgan('combined'), express.static(path.join(__dirname, 'public'))];
-var MIDDLEWEAR_TO_SET = [['views', './view'], ['view engine', 'pug']]
+var MIDDLEWEAR_TO_MOUNT = [
+    express.json(), helmet({contentSecurityPolicy: false}), cors(), 
+    morgan('combined'), express.static(path.join(__dirname, 'public')), 'this should not work'
+];
+var MIDDLEWEAR_TO_SET = [['views', './views'], ['view engine', 'pug'], 'error']
 
 
 async function connectDb(uri){
@@ -36,16 +39,21 @@ app.get('/check', (req, res) => {
 
 function middlewearCreation(){
     function addMiddlewear(input){
-        // console.log(`app.use(${input})`)
-        app.use(input)
+        if (typeof(input) == 'function'){
+            return app.use(input)
+        } 
+        console.log('error with middlewear');
+        return false;
     }
     return addMiddlewear
 };
 
 function middlewearMounting() {
     function setMiddlewear(input) {
-        if (typeof(input) == Object){
-            app.set(input[i][0], input[i][1])
+        if (typeof(input) === 'object'){
+            return app.set(input[0], input[1]);
+        } else{
+            console.log(`Error with: ${input}`);
         }
     }
     return setMiddlewear

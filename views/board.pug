@@ -1,4 +1,4 @@
-table.chess-board(id="chess-board")
+table.chessboard(id="chessboard")
   tbody
     tr
       th
@@ -12,81 +12,81 @@ table.chess-board(id="chess-board")
       th h
     tr
       th 8
-      td.light &#x265C;
-      td.dark &#x265E;
-      td.light &#x265D;
-      td.dark &#x265B;
-      td.light &#x265A;
-      td.dark &#x265D;
-      td.light &#x265E;
-      td.dark &#x265C;
+      td.light(hx-on:click="alert('You clicked a8')" id="a8") &#x265C; 
+      td.dark(id="b8") &#x265E;
+      td.light(id="c8") &#x265D;
+      td.dark(id="d8") &#x265B;
+      td.light(id="e8") &#x265A;
+      td.dark(id="f8") &#x265D;
+      td.light(id="g8") &#x265E;
+      td.dark(id="h8") &#x265C;
     tr
       th 7
-      td.dark &#x265F;
-      td.light &#x265F;
-      td.dark &#x265F;
-      td.light &#x265F;
-      td.dark &#x265F;
-      td.light &#x265F;
-      td.dark &#x265F;
-      td.light &#x265F;
+      td.dark(id="a7") &#x265F;
+      td.light(id="b7") &#x265F;
+      td.dark(id="c7") &#x265F;
+      td.light(id="d7") &#x265F;
+      td.dark(id="e7") &#x265F;
+      td.light(id="f7") &#x265F;
+      td.dark(id="g7") &#x265F;
+      td.light(id="h7") &#x265F;
     tr
       th 6
-      td.light
-      td.dark
-      td.light
-      td.dark
-      td.light
-      td.dark
-      td.light
-      td.dark
+      td.light(id="a6")
+      td.dark(id="b6")
+      td.light(id="c6")
+      td.dark(id="d6")
+      td.light(id="e6")
+      td.dark(id="f6")
+      td.light(id="g6")
+      td.dark(id="h6")
     tr
       th 5
-      td.dark
-      td.light
-      td.dark
-      td.light
-      td.dark
-      td.light
-      td.dark
-      td.light
+      td.dark(id="a5")
+      td.light(id="b5")
+      td.dark(id="c5")
+      td.light(id="d5")
+      td.dark(id="e5")
+      td.light(id="f5")
+      td.dark(id="g5")
+      td.light(id="h5")
     tr
       th 4
-      td.light
-      td.dark
-      td.light
-      td.dark
-      td.light
-      td.dark
-      td.light
-      td.dark
+      td.light(id="a4")
+      td.dark(id="b4")
+      td.light(id="c4")
+      td.dark(id="d4")
+      td.light(id="e4")
+      td.dark(id="f4")
+      td.light(id="g4")
+      td.dark(id="h4")
     tr
       th 3
-      td.dark
-      td.light
-      td.dark
-      td.light
-      td.dark
-      td.light
-      td.dark
-      td.light
+      td.dark(id="a3")
+      td.light(id="b3")
+      td.dark(id="c3")
+      td.light(id="d3")
+      td.dark(id="e3")
+      td.light(id="f3")
+      td.dark(id="g3")
+      td.light(id="h3")
     tr
       th 2
-      td.light &#x2659;
-      td.dark &#x2659;
-      td.light &#x2659;
-      td.dark &#x2659;
-      td.light &#x2659;
-      td.dark &#x2659;
-      td.light &#x2659;
-      td.dark &#x2659;
+      td.light(id="a2") &#x2659;
+      td.dark(id="b2") &#x2659;
+      td.light(id="c2") &#x2659;
+      td.dark(id="d2") &#x2659;
+      td.light(id="e2") &#x2659;
+      td.dark(id="f2") &#x2659;
+      td.light(id="g2") &#x2659;
+      td.dark(id="h2") &#x2659;
     tr
       th 1
-      td.dark &#x2656;
-      td.light &#x2658;
-      td.dark &#x2657;
-      td.light &#x2655;
-      td.dark &#x2654;
-      td.light &#x2657;
-      td.dark &#x2658;
-      td.light &#x2656;
+      td.dark(id="a1") &#x2656;
+      td.light(id="b1") &#x2658;
+      td.dark(id="c1") &#x2657;
+      td.light(id="d1") &#x2655;
+      td.dark(id="e1") &#x2654;
+      td.light(id="f1") &#x2657;
+      td.dark(id="g1") &#x2658;
+      td.light(id="h1") &#x2656;

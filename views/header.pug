@@ -1,15 +1,24 @@
 head
   title Chess Logging App
   meta(charset='UTF-8')
-  script(src='/app.js')
+  script(src="https://unpkg.com/htmx.org@2.0.3" integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq" crossorigin="anonymous")
   style.
-    .chess-board { border-spacing: 0; border-collapse: collapse; }
-    .chess-board th { padding: .5em; }
-    .chess-board th + th { border-bottom: 1px solid #000; }
-    .chess-board th:first-child,
-    .chess-board td:last-child { border-right: 1px solid #000; }
-    .chess-board tr:last-child td { border-bottom: 1px solid; }
-    .chess-board th:empty { border: none; }
-    .chess-board td { width: 1.5em; height: 1.5em; text-align: center; font-size: 32px; line-height: 0;}
-    .chess-board .light { background: #eee; }
-    .chess-board .dark { background: #aaa; }
+    body  { margin: 0; display:grid; justify-content: center; align-items: center; height: 100vh; }
+    .container {
+      width: 800px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+    .square-template {display: none;}
+    .row-template {display: none;}
+    .chessboard { aspect-ratio: 1; border-spacing: 0; border-collapse: collapse;}
+    .chessboard th { padding: .5em;}
+    .chessboard th + th { border-bottom: 1px solid #000; }
+    .chessboard th:first-child,
+    .chessboard td:last-child { border-right: 1px solid #000; }
+    .chessboard tr:last-child td { border-bottom: 1px solid; }
+    .chessboard th:empty { border: none; }
+    .chessboard td { width: 1.5em; height: 1.5em; text-align: center; font-size: 32px; line-height: 0;}
+    .chessboard .light { background: #eee; }
+    .chessboard .dark { background: #aaa; }
