@@ -1,0 +1,44 @@
+script(src="/app.js")
+
+mixin position(cords, color)
+    -var position = cords[0] + cords[1]
+    case color
+        when true
+            td.board-position.light(id=position hx-on:click="alert(`You clicked ${this.id}`)")
+        default
+            td.board-position.dark(id=position hx-on:click="alert(`You clicked ${this.id}`)")
+
+
+
+table.chessboard(id="chessboard")
+    - var y_val = 8
+    - const  col_letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+    tbody 
+        tr.header 
+            th 
+            th a
+            th b
+            th c
+            th d
+            th e
+            th f
+            th g
+            th h
+        tr.row-template.board-row
+            th 8
+            td.light.board-position.square-template 
+        while y_val > 0
+            tr.board-row
+                th= y_val
+                -var color = true // switch for alternating board color
+                if y_val%2 != 0
+                    -color = !color
+                each col in col_letters
+                    +position([col,y_val], color)
+                    -color = !color
+                -y_val -- 
+
+
+
+
+
