@@ -1,12 +1,10 @@
-script(src="/app.js")
-
 mixin position(cords, color)
     -var positions = cords[0] + cords[1]
     case color
         when true
-            td.board-position.light(id=positions hx-target="#current-turn" hx-trigger="click" hx-swap="innerhtml ${this.id}")
+            td.board-position.light(id=positions onclick="add_piece(this.id)")
         default
-            td.board-position.dark(id=positions hx-on:click="alert(`You clicked ${this.id}`)")
+            td.board-position.dark(id=positions onclick="add_piece(this.id)")
 
 
 
@@ -16,24 +14,19 @@ table.chessboard(id="chessboard")
     tbody 
         tr.header 
             th 
-            th a
-            th b
-            th c
-            th d
-            th e
-            th f
-            th g
-            th h 
+            each col in col_letters
+                th=col
         while y_val > 0
             tr.board-row
                 th= y_val
-                -var color = true // switch for alternating board color
+                -var color = true // sets value for alternating color
                 if y_val%2 != 0 
                     -color = !color // alternates color on odd row #'s
                 each col in col_letters
                     +position([col,y_val], color)
-                    -color = !color
+                    -color = !color // switches color for each square
                 -y_val -- 
+
 
 
 
