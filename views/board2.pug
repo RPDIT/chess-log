@@ -2,9 +2,9 @@ mixin position(cords, color)
     -var positions = cords[0] + cords[1]
     case color
         when true
-            td.board-position.light(id=positions onclick="add_piece(this.id)")
+            td.board-position.light(id=positions onclick="add_piece(this.id, white_a_pawn)")
         default
-            td.board-position.dark(id=positions onclick="add_piece(this.id)")
+            td.board-position.dark(id=positions onclick="add_piece(this.id, white_rook)")
 
 
 
